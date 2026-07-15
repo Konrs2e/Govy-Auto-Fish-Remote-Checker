@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 01:40:51</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 01:41:56</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>1</b> caught / <b>1</b> reels = <b>100.0%</b> catch rate</p><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 122px x1  </p>
+<p class='sub'><b>5</b> caught / <b>5</b> reels = <b>100.0%</b> catch rate</p><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 122px x1  153px x2  129px x1  154px x1  </p>
 </div>
 <script>
-var pts = [[614,64.020000]];
+var pts = [[614,64.020000],[615,39.620000],[616,61.690000],[617,55.540000],[618,49.000000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
