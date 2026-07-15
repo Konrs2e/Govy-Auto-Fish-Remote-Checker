@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 01:43:20</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 01:44:30</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>9</b> caught / <b>9</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Dugong</td><td>2</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 122px x1  153px x2  129px x1  154px x1  106px x1  206px x1  </p>
+<p class='sub'><b>15</b> caught / <b>15</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Dugong</td><td>3</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 122px x1  153px x3  129px x1  154px x1  106px x1  206px x1  123px x1  312px x1  125px x1  207px x1  </p>
 </div>
 <script>
-var pts = [[614,64.020000],[615,39.620000],[616,61.690000],[617,55.540000],[618,49.000000],[619,33.230000],[620,75.680000],[621,34.890000],[622,59.980000]];
+var pts = [[614,64.020000],[615,39.620000],[616,61.690000],[617,55.540000],[618,49.000000],[619,33.230000],[620,75.680000],[621,34.890000],[622,59.980000],[623,81.250000],[624,52.790000],[625,40.400000],[626,34.050000],[627,77.310000],[628,19.420000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
