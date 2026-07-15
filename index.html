@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:03:05</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:04:41</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>4</b> caught / <b>4</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Manta Ray</td><td>1</td></tr><tr><td>Hammerhead Shark</td><td>1</td></tr><tr><td>Catfish</td><td>1</td></tr><tr><td>Trout</td><td>1</td></tr></table>
+<p class='sub'><b>5</b> caught / <b>5</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Manta Ray</td><td>1</td></tr><tr><td>Hammerhead Shark</td><td>2</td></tr><tr><td>Catfish</td><td>1</td></tr><tr><td>Trout</td><td>1</td></tr></table>
 </div>
 <script>
-var pts = [[1,34.860000],[2,52.290000],[3,84.560000],[4,33.610000]];
+var pts = [[1,34.860000],[2,52.290000],[3,84.560000],[4,33.610000],[5,30.220000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
