@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='refresh' content='30'>
+<title>Tracking Error vs Casts</title>
+<style>
+body { font-family: Segoe UI, sans-serif; background: #fafafa; color: #222; margin: 24px; }
+h2 { margin: 0 0 4px 0; }
+p.sub { margin: 0 0 16px 0; color: #666; font-size: 13px; }
+#wrap { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; display: inline-block; }
+#summary { margin-top: 10px; font-size: 14px; }
+</style>
+</head>
+<body>
+<h2>Tracking error vs casts (v5)</h2>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 15:09:35</p>
+<div id='wrap'><canvas id='c' width='940' height='520'></canvas>
+<div id='summary'></div></div>
+<script>
+var pts = [[1,31.970000]];
+var cv = document.getElementById('c');
+var ctx = cv.getContext('2d');
+var W = cv.width, H = cv.height;
+var padL = 70, padR = 30, padT = 30, padB = 55;
+var xs = pts.map(function(p){ return p[0]; });
+var ys = pts.map(function(p){ return p[1]; });
+var xmin = Math.min.apply(null, xs), xmax = Math.max.apply(null, xs);
+if (xmin == xmax) { xmin -= 1; xmax += 1; }
+var ymin = 0;
+var ymax = Math.max.apply(null, ys) * 1.15;
+if (ymax < 10) ymax = 10;
+function X(v){ return padL + (v - xmin) / (xmax - xmin) * (W - padL - padR); }
+function Y(v){ return H - padB - (v - ymin) / (ymax - ymin) * (H - padT - padB); }
+ctx.font = '12px sans-serif';
+ctx.strokeStyle = '#e3e3e3';
+ctx.fillStyle = '#555';
+var steps = 5;
+for (var i = 0; i <= steps; i++) {
+var v = ymin + (ymax - ymin) * i / steps;
+var y = Y(v);
+ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+ctx.textAlign = 'right';
+ctx.fillText(v.toFixed(1) + '%', padL - 8, y + 4);
+}
+var xstep = Math.max(1, Math.ceil((xmax - xmin) / 10));
+for (var v = Math.ceil(xmin); v <= xmax; v += xstep) {
+var x = X(v);
+ctx.beginPath(); ctx.moveTo(x, H - padB); ctx.lineTo(x, H - padB + 5); ctx.strokeStyle = '#999'; ctx.stroke();
+ctx.strokeStyle = '#e3e3e3';
+ctx.textAlign = 'center';
+ctx.fillText(v, x, H - padB + 20);
+}
+ctx.strokeStyle = '#333'; ctx.lineWidth = 1;
+ctx.beginPath(); ctx.moveTo(padL, padT); ctx.lineTo(padL, H - padB); ctx.lineTo(W - padR, H - padB); ctx.stroke();
+ctx.strokeStyle = '#1976d2'; ctx.lineWidth = 2;
+ctx.beginPath();
+pts.forEach(function(p, i){
+var x = X(p[0]), y = Y(p[1]);
+if (i == 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+});
+ctx.stroke();
+ctx.fillStyle = '#1976d2';
+pts.forEach(function(p){
+ctx.beginPath(); ctx.arc(X(p[0]), Y(p[1]), 3.5, 0, Math.PI * 2); ctx.fill();
+});
+var win = 5, ma = [];
+for (var i = 0; i < ys.length; i++) {
+var s = 0, c = 0;
+for (var j = Math.max(0, i - win + 1); j <= i; j++) { s += ys[j]; c++; }
+ma.push(s / c);
+}
+ctx.strokeStyle = '#e65100'; ctx.lineWidth = 2; ctx.setLineDash([6, 4]);
+ctx.beginPath();
+ma.forEach(function(v, i){
+var x = X(xs[i]), y = Y(v);
+if (i == 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+});
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle = '#333'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center';
+ctx.fillText('Casts', padL + (W - padL - padR) / 2, H - 10);
+ctx.save();
+ctx.translate(16, padT + (H - padT - padB) / 2);
+ctx.rotate(-Math.PI / 2);
+ctx.fillText('Avg error (% of zone half-width)', 0, 0);
+ctx.restore();
+ctx.textAlign = 'left'; ctx.font = '12px sans-serif';
+ctx.fillStyle = '#1976d2'; ctx.fillRect(W - 235, 12, 14, 3);
+ctx.fillStyle = '#333'; ctx.fillText('Per-cast error', W - 215, 18);
+ctx.fillStyle = '#e65100'; ctx.fillRect(W - 120, 12, 14, 3);
+ctx.fillStyle = '#333'; ctx.fillText('5-cast avg', W - 100, 18);
+var latest = ys[ys.length - 1];
+var best = Math.min.apply(null, ys);
+document.getElementById('summary').innerHTML =
+'<b>' + pts.length + '</b> casts logged &nbsp;|&nbsp; latest: <b>' + latest.toFixed(2) + '%</b> &nbsp;|&nbsp; best: <b>' + best.toFixed(2) + '%</b> &nbsp;|&nbsp; 5-cast avg: <b>' + ma[ma.length - 1].toFixed(2) + '%</b>';
+</script>
+</body>
+</html>
