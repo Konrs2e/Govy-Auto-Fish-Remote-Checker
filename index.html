@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:28:14</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:29:24</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>12</b> caught / <b>12</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Sea Turtle</td><td>1</td></tr><tr><td>Great White Shark</td><td>1</td></tr><tr><td>Hammerhead Shark</td><td>2</td></tr><tr><td>Catfish</td><td>1</td></tr><tr><td>Sunfish</td><td>1</td></tr><tr><td>Swordfish</td><td>1</td></tr><tr><td>Dugong</td><td>2</td></tr><tr><td>Manta Ray</td><td>1</td></tr><tr><td>Trout</td><td>1</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 469px x1  </p>
+<p class='sub'><b>18</b> caught / <b>18</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Sea Turtle</td><td>1</td></tr><tr><td>Great White Shark</td><td>1</td></tr><tr><td>Hammerhead Shark</td><td>2</td></tr><tr><td>Catfish</td><td>1</td></tr><tr><td>Sunfish</td><td>2</td></tr><tr><td>Swordfish</td><td>2</td></tr><tr><td>Dugong</td><td>4</td></tr><tr><td>Manta Ray</td><td>2</td></tr><tr><td>Trout</td><td>2</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 469px x1  </p>
 </div>
 <script>
-var pts = [[1,40.540000],[2,35.650000],[3,52.160000],[4,48.790000],[5,43.500000],[6,71.330000],[7,50.910000],[8,42.000000],[9,17.910000],[10,31.690000],[11,52.590000],[12,45.310000]];
+var pts = [[1,40.540000],[2,35.650000],[3,52.160000],[4,48.790000],[5,43.500000],[6,71.330000],[7,50.910000],[8,42.000000],[9,17.910000],[10,31.690000],[11,52.590000],[12,45.310000],[13,64.730000],[14,30.600000],[15,52.770000],[16,20.790000],[17,24.250000],[18,53.700000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
