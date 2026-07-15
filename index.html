@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:31:42</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:32:50</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>29</b> caught / <b>29</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Sea Turtle</td><td>1</td></tr><tr><td>Great White Shark</td><td>3</td></tr><tr><td>Hammerhead Shark</td><td>3</td></tr><tr><td>Catfish</td><td>2</td></tr><tr><td>Sunfish</td><td>4</td></tr><tr><td>Swordfish</td><td>4</td></tr><tr><td>Dugong</td><td>6</td></tr><tr><td>Manta Ray</td><td>3</td></tr><tr><td>Trout</td><td>2</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 469px x1  </p>
+<p class='sub'><b>35</b> caught / <b>35</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Sea Turtle</td><td>2</td></tr><tr><td>Great White Shark</td><td>5</td></tr><tr><td>Hammerhead Shark</td><td>3</td></tr><tr><td>Catfish</td><td>3</td></tr><tr><td>Sunfish</td><td>4</td></tr><tr><td>Swordfish</td><td>5</td></tr><tr><td>Dugong</td><td>7</td></tr><tr><td>Manta Ray</td><td>3</td></tr><tr><td>Trout</td><td>2</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 469px x1  </p>
 </div>
 <script>
-var pts = [[1,40.540000],[2,35.650000],[3,52.160000],[4,48.790000],[5,43.500000],[6,71.330000],[7,50.910000],[8,42.000000],[9,17.910000],[10,31.690000],[11,52.590000],[12,45.310000],[13,64.730000],[14,30.600000],[15,52.770000],[16,20.790000],[17,24.250000],[18,53.700000],[19,54.190000],[20,94.280000],[21,9.240000],[22,49.000000],[23,68.980000],[24,70.830000],[25,48.860000],[26,62.810000],[27,24.340000],[28,49.500000],[29,40.330000]];
+var pts = [[1,40.540000],[2,35.650000],[3,52.160000],[4,48.790000],[5,43.500000],[6,71.330000],[7,50.910000],[8,42.000000],[9,17.910000],[10,31.690000],[11,52.590000],[12,45.310000],[13,64.730000],[14,30.600000],[15,52.770000],[16,20.790000],[17,24.250000],[18,53.700000],[19,54.190000],[20,94.280000],[21,9.240000],[22,49.000000],[23,68.980000],[24,70.830000],[25,48.860000],[26,62.810000],[27,24.340000],[28,49.500000],[29,40.330000],[30,39.190000],[31,32.810000],[32,35.650000],[33,34.970000],[34,54.320000],[35,53.590000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
