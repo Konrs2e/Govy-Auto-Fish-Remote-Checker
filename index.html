@@ -17,14 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:14:37</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-15 16:19:09</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>9</b> caught / <b>9</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Manta Ray</td><td>2</td></tr><tr><td>Trout</td><td>3</td></tr><tr><td>Sea Turtle</td><td>1</td></tr><tr><td>Swordfish</td><td>1</td></tr><tr><td>Dugong</td><td>1</td></tr><tr><td>Catfish</td><td>1</td></tr></table>
+<p class='sub'><b>10</b> caught / <b>10</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Manta Ray</td><td>2</td></tr><tr><td>Trout</td><td>3</td></tr><tr><td>Sea Turtle</td><td>1</td></tr><tr><td>Swordfish</td><td>1</td></tr><tr><td>Dugong</td><td>1</td></tr><tr><td>Catfish</td><td>1</td></tr><tr><td>Great White Shark</td><td>1</td></tr></table>
 </div>
 <script>
-var pts = [[26,44.490000],[27,35.650000],[28,59.900000],[29,30.630000],[30,65.010000],[31,20.510000],[32,40.490000],[33,61.150000],[34,43.850000]];
+var pts = [[26,44.490000],[27,35.650000],[28,59.900000],[29,30.630000],[30,65.010000],[31,20.510000],[32,40.490000],[33,61.150000],[34,43.850000],[10,41.600000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
