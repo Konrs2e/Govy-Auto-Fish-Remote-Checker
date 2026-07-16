@@ -17,16 +17,14 @@ th { background: #f0f0f0; }
 </head>
 <body>
 <h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 03:20:03</p>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 30s. Last updated: 2026-07-16 03:36:30</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
-<h2 style='margin-top:18px'>Fish per cast</h2>
-<canvas id='c2' width='940' height='200'></canvas>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>38</b> caught / <b>38</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Swordfish</td><td>2</td></tr><tr><td>Manta Ray</td><td>10</td></tr><tr><td>Great White Shark</td><td>2</td></tr><tr><td>Dugong</td><td>4</td></tr><tr><td>Dolphin</td><td>2</td></tr><tr><td>Catfish</td><td>2</td></tr><tr><td>Trout</td><td>3</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 204px x4  430px x4  209px x2  420px x1  370px x1  256px x1  </p>
+<p class='sub'><b>4</b> caught / <b>4</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Count</th></tr><tr><td>Manta Ray</td><td>1</td></tr></table><p class='sub'>Unidentified text widths (add these to FishWidthTable in the script after confirming which fish they were): 204px x1  209px x1  153px x1  </p>
 </div>
 <script>
-var pts = [[1,30.190000],[2,48.700000],[3,59.740000],[4,58.440000],[5,68.400000],[6,69.850000],[7,34.750000],[8,53.650000],[9,58.920000],[10,67.140000],[11,56.370000],[12,44.830000],[13,59.980000],[14,72.440000],[15,76.260000],[16,53.000000],[17,59.110000],[18,70.340000],[19,45.930000],[20,64.290000],[21,61.120000],[22,43.520000],[23,62.490000],[24,79.240000],[25,65.970000],[26,36.120000],[27,62.640000],[28,49.480000],[29,82.880000],[30,24.750000],[31,51.970000],[32,73.640000],[33,31.620000],[34,62.800000],[35,65.930000],[36,62.660000],[37,70.050000],[38,58.460000]];
+var pts = [[1,57.320000],[2,149.360000],[3,70.000000],[4,53.830000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
@@ -102,46 +100,6 @@ var latest = ys[ys.length - 1];
 var best = Math.min.apply(null, ys);
 document.getElementById('summary').innerHTML =
 '<b>' + pts.length + '</b> casts logged &nbsp;|&nbsp; latest: <b>' + latest.toFixed(2) + '%</b> &nbsp;|&nbsp; best: <b>' + best.toFixed(2) + '%</b> &nbsp;|&nbsp; 5-cast avg: <b>' + ma[ma.length - 1].toFixed(2) + '%</b>';
-
-var fpts = [[1,'Unknown'],[2,'Swordfish'],[3,'Unknown'],[4,'Swordfish'],[5,'Manta Ray'],[6,'Manta Ray'],[7,'Unknown'],[8,'Manta Ray'],[9,'Manta Ray'],[10,'Unknown'],[11,'Great White Shark'],[12,'Dugong'],[13,'Dugong'],[14,'Dolphin'],[15,'Dolphin'],[16,'Catfish'],[17,'Unknown'],[18,'Unknown'],[19,'Trout'],[20,'Manta Ray'],[21,'Catfish'],[22,'Manta Ray'],[23,'Unknown'],[24,'Unknown'],[25,'Unknown'],[26,'Unknown'],[27,'Manta Ray'],[28,'Unknown'],[29,'Unknown'],[30,'Manta Ray'],[31,'Dugong'],[32,'Great White Shark'],[33,'Trout'],[34,'Trout'],[35,'Unknown'],[36,'Manta Ray'],[37,'Dugong'],[38,'Manta Ray']];
-var cv2 = document.getElementById('c2');
-if (fpts.length === 0) {
-cv2.style.display = 'none';
-} else {
-var species = [];
-fpts.forEach(function(p){ if (species.indexOf(p[1]) < 0) species.push(p[1]); });
-var li = species.indexOf('LOST');
-if (li >= 0) { species.splice(li, 1); species.push('LOST'); }
-var rowH = 26, pad2L = 150, pad2R = 30, pad2T = 14, pad2B = 40;
-cv2.height = pad2T + species.length * rowH + pad2B;
-var W2 = cv2.width, H2 = cv2.height;
-var c2 = cv2.getContext('2d');
-var palette = ['#1976d2','#e65100','#2e7d32','#7b1fa2','#c62828','#00838f','#f9a825','#5d4037','#455a64','#d81b60','#33691e','#4527a0','#ef6c00','#00695c'];
-function X2(v){ return pad2L + (v - xmin) / (xmax - xmin) * (W2 - pad2L - pad2R); }
-c2.font = '12px sans-serif';
-species.forEach(function(s, i){
-var y = pad2T + i * rowH + rowH / 2;
-c2.strokeStyle = '#eee';
-c2.beginPath(); c2.moveTo(pad2L, y); c2.lineTo(W2 - pad2R, y); c2.stroke();
-c2.fillStyle = (s === 'LOST') ? '#999' : palette[i % palette.length];
-c2.textAlign = 'right';
-c2.fillText(s, pad2L - 8, y + 4);
-});
-fpts.forEach(function(p){
-var i = species.indexOf(p[1]);
-var y = pad2T + i * rowH + rowH / 2;
-var lost = (p[1] === 'LOST');
-c2.fillStyle = lost ? '#999' : palette[i % palette.length];
-c2.beginPath(); c2.arc(X2(p[0]), y, lost ? 3 : 4.5, 0, Math.PI * 2); c2.fill();
-});
-c2.strokeStyle = '#333';
-c2.beginPath(); c2.moveTo(pad2L, pad2T); c2.lineTo(pad2L, H2 - pad2B); c2.lineTo(W2 - pad2R, H2 - pad2B); c2.stroke();
-c2.fillStyle = '#333'; c2.textAlign = 'center';
-for (var v = Math.ceil(xmin); v <= xmax; v += xstep) {
-c2.fillText(v, X2(v), H2 - pad2B + 16);
-}
-c2.fillText('Casts', pad2L + (W2 - pad2L - pad2R) / 2, H2 - 8);
-}
 </script>
 </body>
 </html>
