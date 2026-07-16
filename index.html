@@ -16,19 +16,19 @@ th { background: #f0f0f0; }
 </style>
 </head>
 <body>
-<h2>Tracking error vs casts (v5)</h2>
-<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 10s. Last updated: 2026-07-16 04:58:54</p>
+<h2>Tracking error vs casts (Version 6)</h2>
+<p class='sub'>Each point is one completed reel. Error = time-weighted average distance from zone center, as a percentage of the zone half-width (lower is better). Page auto-refreshes every 10s. Last updated: 2026-07-16 06:03:44</p>
 <div id='wrap'><canvas id='c' width='940' height='520'></canvas>
 <div id='summary'></div>
 <h2 style='margin-top:18px'>Catch totals</h2>
 <canvas id='c3' width='640' height='300'></canvas>
 <h2 style='margin-top:18px'>Catches</h2>
-<p class='sub'><b>65</b> caught / <b>65</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Rarity</th><th>Count</th><th>% of catches</th></tr><tr><td>Trout</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>2</td><td>3.1%</td></tr><tr><td>Manta Ray</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>9</td><td>13.8%</td></tr><tr><td>Hammerhead Shark</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>5</td><td>7.7%</td></tr><tr><td>Giant Squid</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>7</td><td>10.8%</td></tr><tr><td>Dugong</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>10</td><td>15.4%</td></tr><tr><td>Catfish</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>5</td><td>7.7%</td></tr><tr><td>Sea Turtle</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>8</td><td>12.3%</td></tr><tr><td>Great White Shark</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>5</td><td>7.7%</td></tr><tr><td>Swordfish</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>6</td><td>9.2%</td></tr><tr><td>Sunfish</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>3</td><td>4.6%</td></tr><tr><td>Dolphin</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>5</td><td>7.7%</td></tr><tr><td>Slime Chest Key</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Egyptian Chest Key</td><td style='color:#7b1fa2;font-weight:bold'>Epic</td><td>0</td><td>0.0%</td></tr><tr><td>Wooden Propeller</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>0</td><td>0.0%</td></tr></table>
+<p class='sub'><b>7</b> caught / <b>7</b> reels = <b>100.0%</b> catch rate</p><table><tr><th>Fish</th><th>Rarity</th><th>Count</th><th>% of catches</th></tr><tr><td>Trout</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>0</td><td>0.0%</td></tr><tr><td>Manta Ray</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>1</td><td>14.3%</td></tr><tr><td>Hammerhead Shark</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Giant Squid</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>1</td><td>14.3%</td></tr><tr><td>Dugong</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Catfish</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>2</td><td>28.6%</td></tr><tr><td>Sea Turtle</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Great White Shark</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>1</td><td>14.3%</td></tr><tr><td>Swordfish</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>1</td><td>14.3%</td></tr><tr><td>Sunfish</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Dolphin</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>1</td><td>14.3%</td></tr><tr><td>Slime Chest Key</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>0</td><td>0.0%</td></tr><tr><td>Egyptian Chest Key</td><td style='color:#7b1fa2;font-weight:bold'>Epic</td><td>0</td><td>0.0%</td></tr><tr><td>Wooden Propeller</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>0</td><td>0.0%</td></tr></table>
 <h2 style='margin-top:18px'>Unknown catches per cast</h2>
 <canvas id='c2' width='940' height='200'></canvas>
 </div>
 <script>
-var pts = [[1,41.950000],[2,60.310000],[3,41.860000],[4,63.160000],[5,79.370000],[6,95.090000],[7,64.140000],[8,76.660000],[9,83.390000],[10,47.950000],[11,76.770000],[12,49.010000],[13,50.930000],[14,49.440000],[15,61.560000],[16,76.160000],[17,41.500000],[18,65.850000],[19,47.200000],[20,39.460000],[21,39.980000],[22,61.280000],[23,70.330000],[24,76.460000],[25,59.030000],[26,73.430000],[27,64.980000],[28,57.730000],[29,45.790000],[30,53.670000],[31,70.160000],[32,32.960000],[33,47.850000],[34,44.480000],[35,75.120000],[36,66.030000],[37,61.350000],[38,74.760000],[39,47.800000],[40,58.840000],[41,63.700000],[42,101.520000],[43,56.540000],[44,40.250000],[45,48.220000],[46,66.140000],[47,62.850000],[48,70.720000],[49,45.830000],[50,32.060000],[51,49.400000],[52,100.470000],[53,51.740000],[54,82.330000],[55,61.020000],[56,54.560000],[57,56.250000],[58,55.340000],[59,70.960000],[60,41.040000],[61,67.500000],[62,25.490000],[63,59.330000],[64,78.600000],[65,63.320000]];
+var pts = [[1,82.250000],[2,57.940000],[3,68.510000],[4,85.040000],[5,95.050000],[6,78.010000],[7,69.790000]];
 var cv = document.getElementById('c');
 var ctx = cv.getContext('2d');
 var W = cv.width, H = cv.height;
@@ -105,7 +105,7 @@ var best = Math.min.apply(null, ys);
 document.getElementById('summary').innerHTML =
 '<b>' + pts.length + '</b> casts logged &nbsp;|&nbsp; latest: <b>' + latest.toFixed(2) + '%</b> &nbsp;|&nbsp; best: <b>' + best.toFixed(2) + '%</b> &nbsp;|&nbsp; 5-cast avg: <b>' + ma[ma.length - 1].toFixed(2) + '%</b>';
 
-var fpts = [[1,'Manta Ray'],[2,'Manta Ray'],[3,'Swordfish'],[4,'Sea Turtle'],[5,'Manta Ray'],[6,'Dolphin'],[7,'Trout'],[8,'Catfish'],[9,'Giant Squid'],[10,'Sea Turtle'],[11,'Hammerhead Shark'],[12,'Sea Turtle'],[13,'Dolphin'],[14,'Dugong'],[15,'Dugong'],[16,'Catfish'],[17,'Dugong'],[18,'Giant Squid'],[19,'Dugong'],[20,'Great White Shark'],[21,'Dolphin'],[22,'Hammerhead Shark'],[23,'Sea Turtle'],[24,'Swordfish'],[25,'Great White Shark'],[26,'Manta Ray'],[27,'Manta Ray'],[28,'Great White Shark'],[29,'Dugong'],[30,'Dugong'],[31,'Dugong'],[32,'Giant Squid'],[33,'Swordfish'],[34,'Sea Turtle'],[35,'Manta Ray'],[36,'Sunfish'],[37,'Great White Shark'],[38,'Manta Ray'],[39,'Catfish'],[40,'Dugong'],[41,'Giant Squid'],[42,'Sunfish'],[43,'Manta Ray'],[44,'Dugong'],[45,'Dugong'],[46,'Sea Turtle'],[47,'Giant Squid'],[48,'Sea Turtle'],[49,'Trout'],[50,'Sea Turtle'],[51,'Hammerhead Shark'],[52,'Giant Squid'],[53,'Swordfish'],[54,'Catfish'],[55,'Dolphin'],[56,'Sunfish'],[57,'Hammerhead Shark'],[58,'Great White Shark'],[59,'Manta Ray'],[60,'Catfish'],[61,'Giant Squid'],[62,'Swordfish'],[63,'Dolphin'],[64,'Hammerhead Shark'],[65,'Swordfish']];
+var fpts = [[1,'Catfish'],[2,'Catfish'],[3,'Giant Squid'],[4,'Great White Shark'],[5,'Dolphin'],[6,'Swordfish'],[7,'Manta Ray']];
 fpts = fpts.filter(function(p){ return p[1] === 'Unknown'; });
 var cv2 = document.getElementById('c2');
 if (fpts.length === 0) {
@@ -146,7 +146,7 @@ c2.fillText(v, X2(v), H2 - pad2B + 16);
 c2.fillText('Casts', pad2L + (W2 - pad2L - pad2R) / 2, H2 - 8);
 }
 
-var bars = [['Trout',2,'#1976d2'],['Manta Ray',9,'#e65100'],['Hammerhead Shark',5,'#2e7d32'],['Giant Squid',7,'#2e7d32'],['Dugong',10,'#2e7d32'],['Catfish',5,'#2e7d32'],['Sea Turtle',8,'#2e7d32'],['Great White Shark',5,'#2e7d32'],['Swordfish',6,'#1976d2'],['Sunfish',3,'#2e7d32'],['Dolphin',5,'#e65100'],['Slime Chest Key',0,'#2e7d32'],['Egyptian Chest Key',0,'#7b1fa2'],['Wooden Propeller',0,'#1976d2']];
+var bars = [['Trout',0,'#1976d2'],['Manta Ray',1,'#e65100'],['Hammerhead Shark',0,'#2e7d32'],['Giant Squid',1,'#2e7d32'],['Dugong',0,'#2e7d32'],['Catfish',2,'#2e7d32'],['Sea Turtle',0,'#2e7d32'],['Great White Shark',1,'#2e7d32'],['Swordfish',1,'#1976d2'],['Sunfish',0,'#2e7d32'],['Dolphin',1,'#e65100'],['Slime Chest Key',0,'#2e7d32'],['Egyptian Chest Key',0,'#7b1fa2'],['Wooden Propeller',0,'#1976d2']];
 var cv3 = document.getElementById('c3');
 if (bars.length === 0) {
 cv3.style.display = 'none';
