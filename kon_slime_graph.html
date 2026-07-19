@@ -9,7 +9,7 @@ th, td { border: 1px solid #ddd; padding: 4px 12px; font-size: 14px; text-align:
 th { background: #f0f0f0; }
 </style></head><body>
 <h2>Slime drops</h2>
-<p class='sub'>Built: 2026-07-19 05:37:42 &nbsp;|&nbsp; <a href='kon_slime_graph.html'>Back to fishing page</a>
+<p class='sub'>Built: 2026-07-19 05:38:50 &nbsp;|&nbsp; <a href='kon_slime_graph.html'>Back to fishing page</a>
   &nbsp;|&nbsp; <button onclick="location.href=location.pathname+'?t='+Date.now()">Force refresh graphs</button></p>
 <div id='wrap'>
 <h2>Drop totals</h2>
@@ -17,10 +17,10 @@ th { background: #f0f0f0; }
 <h2 style='margin-top:18px'>Drops over time</h2>
 <canvas id='sc' width='940' height='420'></canvas>
 <h2 style='margin-top:18px'>Totals</h2>
-<table><tr><th>Item</th><th>Rarity</th><th>Total</th><th>% of drops</th></tr><tr><td style='color:#f9a825;font-weight:bold'>Titan Slime Boss Token</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>220</td><td>19.0%</td></tr><tr><td style='color:#2e7d32;font-weight:bold'>Green Sticky Cog</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>6</td><td>0.5%</td></tr><tr><td style='color:#1976d2;font-weight:bold'>Blue Sticky Cog</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>10</td><td>0.9%</td></tr><tr><td style='color:#7b1fa2;font-weight:bold'>Purple Sticky Cog</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>3</td><td>0.3%</td></tr><tr><td style='color:#e91e63;font-weight:bold'>Rainbow Cog</td><td style='color:#c62828;font-weight:bold'>Mythic</td><td>2</td><td>0.2%</td></tr><tr><td style='color:#66bb6a;font-weight:bold'>Green Slime Ball</td><td style='color:#9e9e9e;font-weight:bold'>Common</td><td>246</td><td>21.3%</td></tr><tr><td style='color:#42a5f5;font-weight:bold'>Blue Slime Ball</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>362</td><td>31.3%</td></tr><tr><td style='color:#ab47bc;font-weight:bold'>Purple Slime Ball</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>306</td><td>26.5%</td></tr></table>
+<table><tr><th>Item</th><th>Rarity</th><th>Total</th><th>% of drops</th></tr><tr><td style='color:#f9a825;font-weight:bold'>Titan Slime Boss Token</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>225</td><td>19.0%</td></tr><tr><td style='color:#2e7d32;font-weight:bold'>Green Sticky Cog</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>8</td><td>0.7%</td></tr><tr><td style='color:#1976d2;font-weight:bold'>Blue Sticky Cog</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>10</td><td>0.8%</td></tr><tr><td style='color:#7b1fa2;font-weight:bold'>Purple Sticky Cog</td><td style='color:#e65100;font-weight:bold'>Legendary</td><td>3</td><td>0.3%</td></tr><tr><td style='color:#e91e63;font-weight:bold'>Rainbow Cog</td><td style='color:#c62828;font-weight:bold'>Mythic</td><td>2</td><td>0.2%</td></tr><tr><td style='color:#66bb6a;font-weight:bold'>Green Slime Ball</td><td style='color:#9e9e9e;font-weight:bold'>Common</td><td>251</td><td>21.1%</td></tr><tr><td style='color:#42a5f5;font-weight:bold'>Blue Slime Ball</td><td style='color:#2e7d32;font-weight:bold'>Uncommon</td><td>374</td><td>31.5%</td></tr><tr><td style='color:#ab47bc;font-weight:bold'>Purple Slime Ball</td><td style='color:#1976d2;font-weight:bold'>Rare</td><td>314</td><td>26.5%</td></tr></table>
 </div>
 <script>
-var bars = [['Green Sticky Cog',6,'#2e7d32'],['Blue Sticky Cog',10,'#1976d2'],['Purple Sticky Cog',3,'#e65100'],['Rainbow Cog',2,'#c62828']];
+var bars = [['Green Sticky Cog',8,'#2e7d32'],['Blue Sticky Cog',10,'#1976d2'],['Purple Sticky Cog',3,'#e65100'],['Rainbow Cog',2,'#c62828']];
 var bcv = document.getElementById('bc');
 var bctx = bcv.getContext('2d');
 (function(){
